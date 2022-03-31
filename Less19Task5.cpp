@@ -82,7 +82,8 @@ int main()
         //enter player answer
         cout << endl <<"Enter you answer: ";
         string sPlayerAnswer;
-        getline (cin, sPlayerAnswer);
+        //getline (cin, sPlayerAnswer);
+        cin >> sPlayerAnswer;
 
         //open answer*.txt
         string sWayAnswer = "answer" + to_string(nSectors[nStartSector]) + ".TXT";
