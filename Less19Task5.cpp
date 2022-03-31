@@ -98,24 +98,28 @@ int main()
             //check answer
             bool bAnswerCorrect = true;
 
-            cout << endl << buffer.size();
-            cout << endl << sPlayerAnswer.size();
-            
-            for (int i = 0; i < buffer.size() && i < sPlayerAnswer.size(); i++)
+            //cout << endl << buffer.size();
+            //cout << endl << sPlayerAnswer.size();
+            if (buffer.size() != sPlayerAnswer.size()) bAnswerCorrect = false;
+            else
             {
-                if (buffer[i] != sPlayerAnswer[i])
+                for (int i = 0; i < buffer.size() && i < sPlayerAnswer.size(); i++)
                 {
-                    bAnswerCorrect = false;
-                    break;
+                    if (buffer[i] != sPlayerAnswer[i])
+                    {
+                        bAnswerCorrect = false;
+                        break;
+                    }
                 }
             }
+                        
             //who has won
             (bAnswerCorrect) ? nCountPlayerWon++ : nCountViewerWon++;
             
         }
         else
         {
-            // show message:
+            //show error message
             cout << "Error opening question file";
         }
 
