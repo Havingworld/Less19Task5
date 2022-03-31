@@ -100,12 +100,12 @@ int main()
             //check answer
             bool bAnswerCorrect = true;
 
-            //cout << endl << buffer.size();
+            //cout << endl << buffer.size()-1;
             //cout << endl << sPlayerAnswer.size();
-            if (buffer.size() != sPlayerAnswer.size()) bAnswerCorrect = false;
+            if (buffer.size()-1 != sPlayerAnswer.size()) bAnswerCorrect = false;
             else
             {
-                for (int i = 0; i < buffer.size() && i < sPlayerAnswer.size(); i++)
+                for (int i = 0; i < buffer.size()-1 && i < sPlayerAnswer.size(); i++)
                 {
                     if (buffer[i] != sPlayerAnswer[i])
                     {
