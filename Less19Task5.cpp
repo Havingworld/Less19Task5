@@ -36,7 +36,7 @@ int main()
         nCountViewerWon = 0;
     vector <int> nSectors = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 }; //array questions
 
-    for(int i = 0; i < 13; i++)
+    while(nCountPlayerWon < 6 && nCountViewerWon < 6)
     {
         cout << endl << "Player: " << nCountPlayerWon;
         cout << endl << "Viewer: " << nCountViewerWon;
@@ -81,11 +81,8 @@ int main()
         //enter player answer
         cout << endl <<"Enter you answer: ";
         string sPlayerAnswer;
-        
-        //cin >> sPlayerAnswer;
-        std::getline (std::cin, sPlayerAnswer);
+        getline (cin, sPlayerAnswer);
 
-        
         //open answer*.txt
         string sWayAnswer = "answer" + to_string(nSectors[nStartSector]) + ".TXT";
 
@@ -103,14 +100,18 @@ int main()
 
             cout << endl << buffer.size();
             cout << endl << sPlayerAnswer.size();
-            //*
+            
             for (int i = 0; i < buffer.size() && i < sPlayerAnswer.size(); i++)
             {
-                (buffer[i] == sPlayerAnswer[i])? bAnswerCorrect = true : bAnswerCorrect = false;
+                if (buffer[i] != sPlayerAnswer[i])
+                {
+                    bAnswerCorrect = false;
+                    break;
+                }
             }
             //who has won
             (bAnswerCorrect) ? nCountPlayerWon++ : nCountViewerWon++;
-            //*/
+            
         }
         else
         {
