@@ -38,6 +38,7 @@ int main()
 
     while(nCountPlayerWon < 6 && nCountViewerWon < 6)
     {
+        cout << endl << "----------";
         cout << endl << "Player: " << nCountPlayerWon;
         cout << endl << "Viewer: " << nCountViewerWon;
         cout << endl << "New move, enter step: ";
@@ -128,5 +129,8 @@ int main()
         //check question read
         nSectors[nStartSector] = 0; 
     }
+    cout << endl << "----------";
+    cout << endl << "Player: " << nCountPlayerWon;
+    cout << endl << "Viewer: " << nCountViewerWon;
     (nCountPlayerWon > nCountViewerWon) ? (cout << endl << "Player won!") : (cout << endl << "Viewer won!");
 }
